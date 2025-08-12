@@ -1,0 +1,479 @@
+/* ========================================
+   BASIC RESET - Removes default browser styles
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   ROOT STYLES - Basic font and color setup
+   ======================================== */
+:root {
+  /* Font family - what text looks like */
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* How much space between lines of text */
+  line-height: 1.5;
+
+  /* How thick the text is */
+  font-weight: 400;
+
+  /* Text color - white with some transparency */
+  color: rgba(255, 255, 255, 0.87);
+
+  /* Background color - dark gray */
+  background-color: #242424;
+}
+
+/* ========================================
+   BASIC ELEMENT STYLES
+   ======================================== */
+
+/* Links */
+a {
+  font-weight: 500;
+  color: #55828b;
+  text-decoration: none; /* Removes underline */
+}
+
+a:hover {
+  color: #55828b;
+}
+
+/* Body - the main page background */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* Main headings */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #55828b;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* ========================================
+   MAIN LAYOUT
+   ======================================== */
+
+/* The main container that holds everything */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Container for content - centers everything */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the container */
+  padding: 20px;
+}
+
+/* ========================================
+   HEADER SECTION
+   ======================================== */
+
+/* The top section with title */
+.header {
+  background: linear-gradient(135deg, #eee2df 0%, #a5668b 100%);
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ========================================
+   NAVIGATION BAR
+   ======================================== */
+
+/* The navigation bar at the top */
+.nav {
+  background: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for navigation items */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex; /* Makes items line up horizontally */
+  justify-content: space-between; /* Spreads items apart */
+  align-items: center; /* Centers items vertically */
+  padding: 0 2rem;
+}
+
+/* The brand/logo text */
+.nav-brand h3 {
+  color: #333;
+  font-size: 1.5rem;
+}
+
+/* The navigation links */
+.nav-links {
+  display: flex; /* Makes links line up horizontally */
+  gap: 2rem; /* Space between links */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #f0f0f0;
+}
+
+/* ========================================
+   MAIN CONTENT AREA
+   ======================================== */
+
+/* The main content section */
+.content {
+  padding: 20px;
+  width: 100%;
+}
+
+/* Back button styling */
+.back-button {
+  background: #55828b;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background: #4a6f77;
+}
+
+/* Section titles */
+.section-title {
+  color: #55828b;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* ========================================
+   CARD GRID LAYOUT
+   ======================================== */
+
+/* Grid container for cards */
+.grid {
+  display: grid;
+  /* Creates responsive grid - 3 columns on desktop, 1 on mobile */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem; /* Space between cards */
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ========================================
+   CARD STYLES
+   ======================================== */
+
+/* Individual card styling */
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-5px); /* Moves card up slightly */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  color: #55828b;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.card strong {
+  color: #333;
+}
+
+/* ========================================
+   RELATED DATA SECTION
+   ======================================== */
+
+/* Section for displaying related information */
+.related-data {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #f0f0f0;
+}
+
+.related-data h4 {
+  color: #a5668b;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.related-data ul {
+  list-style: none; /* Removes bullet points */
+  padding: 0;
+}
+
+.related-data li {
+  background: #f8f9fa;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  border-left: 3px solid #55828b;
+}
+
+.related-data li strong {
+  color: #55828b;
+}
+
+.related-data li small {
+  color: #666;
+  font-style: italic;
+}
+
+/* ========================================
+   LOADING STATE
+   ======================================== */
+
+/* Styling for when content is loading */
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - Mobile styles
+   ======================================== */
+
+/* When screen is smaller than 768px (mobile devices) */
+@media (max-width: 768px) {
+  /* Stack navigation items vertically on mobile */
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  /* Single column grid on mobile */
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  /* Smaller header text on mobile */
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  /* Less padding on mobile */
+  .content {
+    padding: 10px;
+  }
+}
+
+/* ========================================
+   AUTHENTICATION STYLES
+   ======================================== */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-card h2 {
+  color: #55828b;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #55828b;
+  box-shadow: 0 0 0 2px rgba(85, 130, 139, 0.2);
+}
+
+.auth-card button[type="submit"] {
+  width: 100%;
+  background: #55828b;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+}
+
+.auth-card button[type="submit"]:hover {
+  background: #4a6f77;
+}
+
+.auth-card button[type="submit"]:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background: #ffebee;
+  color: #c62828;
+  padding: 0.8rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  border-left: 3px solid #c62828;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #666;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #55828b;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.link-button:hover {
+  color: #4a6f77;
+}
+
+/* User info styles */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #333;
+}
+
+.user-info span {
+  font-weight: 500;
+}
+
+.logout-button {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background: #c82333;
+}

@@ -1,0 +1,30 @@
+{
+  "name": "fsu-backend",
+  "type": "module",
+  "imports": {
+    "#*": "./*.js"
+  },
+  "scripts": {
+    "start": "node --env-file=.env server.js",
+    "dev": "node --watch --env-file=.env server.js",
+    "setup": "npm install && cp example.env .env && echo 'Please edit .env with your database URL'",
+    "db:schema": "psql -d fsu -f db/schema.sql",
+    "db:seed": "node --env-file=.env db/seed.js",
+    "db:reset": "npm run db:schema && npm run db:seed",
+    "db:create": "createdb fsu || echo 'Database fsu already exists or creation failed'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
